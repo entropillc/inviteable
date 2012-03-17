@@ -1,0 +1,49 @@
+= Inviteable
+
+NOTE: This gem is under development, and not fully implemented.
+
+Inviteable is a simple mountable engine that allows you to add invites to a User ActiveRecord model. Initially, the gem has the following goals
+
+* Allow A User to register a friend via email address and personal message.
+* Will provide the ability to limit the amount of users that can be invited to the system
+* Will alert the invitee that they have been invited to the system and provide them an invite code
+* Will provide a page that will allow a user to accept an invitation
+* Will provide a means to toggle requiring a user to provide a invitation code
+* Needs to work with multiple authentication gems such as Devise and Entropi Software LLC's Alohomora.
+
+== Constraints
+
+* a User ActiveRecord object must exist, and be the primary object for authentication purposes
+* current_user must be a method available within the controllers that returns the current logged in user.
+
+== Notes on the Gem
+
+The initial focus of this gem is to provide invitation capability within applications developed by Entropi Software LLC, and therefore it fits the needs of our projects. We would like to see the following capabilities built in to the system.
+
+* Ability to make any ActiveRecord object inviteable, IE, if you wanted to use Account instead of User
+
+== Installation
+
+Add the following to your Gemfile
+
+  gem 'inviteable', :git => 'git@github.com:entropillc/inviteable.git'
+  
+Run the install generator
+
+  rails g inviteable:install
+
+== Contributions
+
+We welcome and would encourage contributions to the gem to make it more useful to the community. Before submitting a contribution, please ensure you do the following:
+
+* Update the README file to reflect any changes you made to the functionality
+* If fixing an issue, Reference the issue in the commit message, IE "Fixed Issue 51, invitation page not displaying"
+* If fixing an issue, please add cucumber tests to the test suite to test for the bug that was found
+* If adding functionality, add cucumber features to test the new functionality.
+
+== Liciense
+
+Copyright 2011 Entropi Software, LLC.
+
+Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
+
